@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+PROGNAME="$(basename "$0")"
+PYTHON="$(which python3.7)"
+
+cd /HLA-TAPAS
+
+case "${PROGNAME}" in
+  HLA-TAPAS)
+    "${PYTHON}" HLA-TAPAS.py "$@"
+    ;;
+
+  NomenCleaner | MakeReference | SNP2HLA | HLAassoc | HLAManhattan)
+    "${PYTHON}" -m "${PROGNAME}" "$@"
+    ;;
+
+  *)
+    >&2 echo "Unknown HLA-TAPAS command: ${PROGNAME}"
+    exit 1
+    ;;
+esac
