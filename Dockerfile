@@ -30,5 +30,5 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD5
 
 # Install HLA-TAPAS and copy helper scripts
 RUN git clone https://github.com/immunogenomics/HLA-TAPAS.git
-COPY HLA-TAPAS NomenCleaner MakeReference SNP2HLA HLAassoc HLAManhattan /usr/local/bin
+COPY HLA-TAPAS NomenCleaner MakeReference SNP2HLA HLAassoc HLAManhattan /usr/local/bin/
 WORKDIR /HLA-TAPAS
