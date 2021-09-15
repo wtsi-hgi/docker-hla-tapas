@@ -5,7 +5,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update \
  && apt install -y software-properties-common \
                    python3-pip \
-                   git
+                   git \
+                   openjdk-8-jre
 
 # Install Python 3.7 and Pandas 1.0.3
 RUN add-apt-repository -y ppa:deadsnakes/ppa \
